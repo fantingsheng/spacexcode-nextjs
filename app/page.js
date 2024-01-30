@@ -1,6 +1,7 @@
 'use client';
 import Image from "next/image";
-import { Button } from '@radix-ui/themes';
+import Link from 'next/link';
+import { Container, Button, Box, Flex, Text, TextArea, Strong } from '@radix-ui/themes';
 import { useEffect } from 'react';
 
 function MapContainer() {
@@ -48,8 +49,16 @@ function MapContainer() {
 
 export default function Home() {
   return (
-    <main className="flex bg-[#E6E4E0] sm:h-screen w-screen sm:overflow-hidden">
-      <aside className="w-full sm:w-[430px] bg-primary min-h-screen sm:overflow-y-auto sm:overflow-x-hidden sm:absolute top-0 bottom-0 px-5">
+    <main className="">
+      <Container>
+        <nav className="flex sticky top-0 z-10 bg-[#fff]">
+          <div>快生图</div>
+          <ul className="flex ml-10">
+            <li><Link href="/">Index</Link></li>
+            <li><Link href="/">About</Link></li>
+          </ul>
+        </nav>
+      {/* <aside className="w-full sm:w-[430px] bg-primary min-h-screen sm:overflow-y-auto sm:overflow-x-hidden sm:absolute top-0 bottom-0 px-5">
         <div className='pt-3'>
           <nav className='flex justify-end'>
             <Button>添加</Button>
@@ -71,14 +80,30 @@ export default function Home() {
             </ol>
           </section>
           <footer className='pb-6 text-center text-secondary'>
-            @copyright 2024, by Timfan.
+            @copyright 2024, Created by <Link href="https://spacexcode.com/author">Timfan</Link>.
           </footer>
         </div>
-      </aside>
-
-      <div className='block text-xl text-forest ml-[430px] h-screen relative w-full'>
-        <MapContainer />
-      </div>
+      </aside> */}
+        <div className='block relative w-full pt-10 pb-10'>
+          <Flex gap="4" justify="between">
+            <div className="w-full">
+              <Box className="bg-[#E6E4E0] p-4">
+                预览区域
+              </Box>
+              <Box className="bg-[#E6E4E0] p-4 mt-4">
+                <Text><Strong>输入内容</Strong></Text>
+                <TextArea placeholder="Reply to comment…" />
+              </Box>
+            </div>
+            <Box className="bg-[#E6E4E0] sm:w-[430px] p-4">
+              配置区域
+            </Box>
+          </Flex>
+        </div>
+        <footer className='pb-6 text-center text-secondary'>
+          @copyright 2024, Created by <Link href="https://spacexcode.com/author">Timfan</Link>.
+        </footer>
+      </Container>
     </main>
   );
 }
