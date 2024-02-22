@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import avatar from "../../public/avatar.png";
+import avatar from "../../public/avatar.jpg";
 import NavLink from "./NavLink";
 
 const links = [
