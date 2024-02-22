@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import avatar from "../../public/next.svg";
+import avatar from "../../public/avatar.png";
 import NavLink from "./NavLink";
 
 const links = [
@@ -18,7 +18,7 @@ export default function Header() {
           <Image
             src={avatar}
             alt="Samuel Kraft avatar"
-            className="w-8 h-8"
+            className="w-8 h-8 rounded-full"
             priority
           />
         </Link>
