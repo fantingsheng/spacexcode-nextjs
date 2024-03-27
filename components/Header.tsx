@@ -18,8 +18,8 @@ export default function Header() {
         <Link href="/" className="hidden shrink-0 sm:block">
           <Image
             src={avatar}
-            alt="Samuel Kraft avatar"
-            className="w-8 h-8"
+            alt="Timfan avatar"
+            className="rounded-full w-8 h-8"
             priority
           />
         </Link>
