@@ -2,6 +2,7 @@
 import { pick } from "@contentlayer/client";
 import { allPosts } from "contentlayer/generated";
 // import PostList from "components/postlist";
+import PostList from "../../components/PostList";
 // import Input from "components/input";
 import { useState } from "react";
 // import { IconSearch } from "components/Icons";
@@ -13,13 +14,18 @@ const seoDesc =
 export default function Blog() {
   const [search, setSearch] = useState("");
 
+  // const posts = allPosts
+  //   .sort(
+  //     (a, b) =>
+  //       new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  //   )
+  //   .map((post) =>
+  //     pick(post, ["title", "description", "publishedAt"])
+  //   );
   const posts = allPosts
     .sort(
       (a, b) =>
-        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-    )
-    .map((post) =>
-      pick(post, ["title", "description", "publishedAt"])
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
     );
 
   const filteredPosts = posts.filter(({ title, description }) => {
@@ -57,24 +63,9 @@ export default function Blog() {
         <div
           className="animate-in"
         >
-          {/* <PostList posts={filteredPosts} /> */}
+          <PostList posts={posts} />
         </div>
       </div>
     </>
   );
 }
-
-// export const getStaticProps = async () => {
-//   const posts = allPosts
-//     .sort(
-//       (a, b) =>
-//         new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-//     )
-//     .map((post) =>
-//       pick(post, ["slug", "title", "summary", "publishedAt", "image"])
-//     );
-
-//   return {
-//     props: { posts },
-//   };
-// };

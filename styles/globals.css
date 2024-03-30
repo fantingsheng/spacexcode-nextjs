@@ -28,11 +28,83 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+  /* height: 100%; */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+
+
+@layer base {
+  :root {
+    --bg: var(--gray-1);
+    --boxBg: var(--gray-4);
   }
+
+  .light .prose {
+    --tw-prose-headings: var(--gray-12);
+    --tw-prose-body: var(--gray-12);
+    --tw-prose-bold: var(--gray-12);
+    --tw-prose-links: var(--blue-11);
+    --tw-prose-code: var(--gray-12);
+    --tw-prose-quotes: var(--gray-12);
+  }
+
+  .dark .prose {
+    --tw-prose-headings: var(--gray-12);
+    --tw-prose-body: var(--gray-11);
+    --tw-prose-bold: var(--gray-11);
+    --tw-prose-links: var(--blue-11);
+    --tw-prose-code: var(--gray-11);
+    --tw-prose-quotes: var(--gray-11);
+  }
+
+  .main-header {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    overflow-x: hidden;
+    background-color: var(--bg);
+  }
+}
+
+/* blog prose styles overrides */
+
+/* .prose hr {
+  @apply border-primary;
+}
+
+.prose.project img {
+  @apply max-w-none rounded-md border border-secondary bg-tertiary md:rounded-lg lg:-ml-16 lg:w-[calc(100%+128px)];
+}
+
+.prose blockquote {
+  @apply border-l-2 border-primary font-serif text-lg font-light;
+}
+
+.prose figcaption {
+  @apply mx-auto mb-8 mt-2 max-w-md text-center text-sm font-medium leading-tight text-tertiary;
+}
+
+.prose h3 {
+  @apply mb-2 mt-[48px] text-lg;
+}
+
+.prose p code {
+  @apply whitespace-pre-line rounded border border-primary bg-tertiary px-1 font-normal  text-primary dark:bg-secondaryA;
+} */
+
+.prose
+  p
+  :where(code):not(
+    :where([class~="not-prose"], [class~="not-prose"] *)
+  )::before,
+.prose
+  p
+  :where(code):not(
+    :where([class~="not-prose"], [class~="not-prose"] *)
+  )::after {
+  content: "";
 }

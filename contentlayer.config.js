@@ -1,6 +1,9 @@
 import { makeSource } from "contentlayer/source-files";
  
 import { Post } from "./content/definitions/post";
+import remarkGfm from "remark-gfm";
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-heading";
  
 export default makeSource({
   contentDirPath: "content",
@@ -10,7 +13,18 @@ export default makeSource({
       options.target = "esnext";
       return options;
     },
-    remarkPlugins: [],
-    rehypePlugins: [],
+    remarkPlugins: [[remarkGfm]],
+    rehypePlugins: [
+      [rehypeSlug],
+      [
+        rehypeAutolinkHeadings,
+        {
+          behavior: "wrap",
+          properties: {
+            className: ["<insert class names here>"],
+          },
+        }
+      ]
+    ],
   },
 });

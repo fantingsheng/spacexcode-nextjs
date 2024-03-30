@@ -21,7 +21,13 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="antialiased font-medium bg-primary text-primary">
           <Header />
+          <div
+            className={
+              "px-6 md:px-6 pt-16 pb-24 md:pt-20 md:pb-44 max-w-[700px] mx-auto"
+            }
+          >
             {children}
+          </div>
         </div>
       </body>
     </html>

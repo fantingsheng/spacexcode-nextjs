@@ -14,7 +14,7 @@ export default function Home() {
     .filter((_, i) => i < 3);
 
   return (
-    <main className="px-6 md:px-6 pt-16 pb-24 md:pt-20 md:pb-44 max-w-[700px] mx-auto">
+    <main>
       <div className="flex flex-col gap-16 md:gap-24">
       <div className="flex animate-in flex-col gap-8">
         <div>
