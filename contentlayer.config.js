@@ -3,7 +3,7 @@ import { makeSource } from "contentlayer/source-files";
 import { Post } from "./content/definitions/post";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "rehype-autolink-heading";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
  
 export default makeSource({
   contentDirPath: "content",
