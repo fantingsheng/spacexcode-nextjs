@@ -11,6 +11,12 @@ const nextConfig = {
         hostname: 'spacexcode.oss-cn-hangzhou.aliyuncs.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'spacexcode.com',
+        port: '',
+        pathname: '/**',
       }
     ]
   }

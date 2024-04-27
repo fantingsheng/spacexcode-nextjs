@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="antialiased font-medium bg-primary text-primary">
+        <div className="antialiased bg-primary text-primary">
           <Header />
           <div
             className={
