@@ -34,7 +34,7 @@ export default function Post({ params }: { params: any }) {
             />
             <div className="leading-tight">
               <p className="text-primary">Brian Ruiz</p>
-              <p className="text-secondary">
+              <p className="text-secondary text-sm mt-1">
                 <time dateTime={post.publishedAt}>
                   {formatDate(post.publishedAt)}
                 </time>

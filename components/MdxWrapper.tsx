@@ -151,7 +151,7 @@ const components: MDXComponents = {
   pre: ({ className, ...props }) => (
     <pre
       className={clsx(
-        "mb-4 mt-6 overflow-x-auto rounded-lg border bg-white py-4",
+        "mb-4 mt-6 overflow-x-auto rounded-lg py-4",
         className
       )}
       {...props}

@@ -2,8 +2,10 @@ import { makeSource } from "contentlayer/source-files";
  
 import { Post } from "./content/definitions/post";
 import remarkGfm from "remark-gfm";
+import rehypePrism from "rehype-prism-plus";
 import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeHighlight from 'rehype-highlight';
+import codeTitle from "remark-code-titles";
  
 export default makeSource({
   contentDirPath: "content",
@@ -13,18 +15,11 @@ export default makeSource({
       options.target = "esnext";
       return options;
     },
-    remarkPlugins: [[remarkGfm]],
+    remarkPlugins: [[remarkGfm], codeTitle],
     rehypePlugins: [
+      rehypePrism,
       [rehypeSlug],
-      [
-        rehypeAutolinkHeadings,
-        {
-          behavior: "wrap",
-          properties: {
-            className: ["<insert class names here>"],
-          },
-        }
-      ]
+      rehypeHighlight
     ],
   },
 });
