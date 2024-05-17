@@ -37,9 +37,9 @@ export default function Blog() {
 
   return (
     <>
-      <div className="flex flex-col gap-20">
+      <div className="flex flex-col gap-10">
         <div className="flex flex-col gap-3.5">
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-4">
             <h1 className="animate-in">Blog</h1>
             <p
               className="text-secondary animate-in"
@@ -50,14 +50,13 @@ export default function Blog() {
           <div
             className="animate-in"
           >
-            {/* <Input
-              id="search"
+            <input
+              className="py-2 px-1 w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
               type="search"
               placeholder="Search…"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              pfix={<IconSearch className="w-5 h-5 text-secondary" />}
-            /> */}
+            />
           </div>
         </div>
         <div

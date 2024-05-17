@@ -20,29 +20,18 @@ export default function Post({ params }: { params: any }) {
             <h1 className="text-3xl font-bold leading-tight tracking-tight text-primary">
               {post.title}
             </h1>
-            <p className="text-lg tracking-tight text-tertiary ">
+            {/* <p className="text-lg tracking-tight text-tertiary ">
               {post.description}
-            </p>
+            </p> */}
           </div>
           <div className="flex max-w-none items-center gap-4">
-            <Image
-              src={Avatar}
-              width={40}
-              height={40}
-              alt="avatar"
-              className="rounded-full bg-secondary"
-            />
-            <div className="leading-tight">
-              <p className="text-primary">Brian Ruiz</p>
-              <p className="text-secondary text-sm mt-1">
-                <time dateTime={post.publishedAt}>
-                  {formatDate(post.publishedAt)}
-                </time>
-                {/* {" · "} */}
-              </p>
-            </div>
+            <p className="text-secondary text-sm mt-1">
+              <time dateTime={post.publishedAt}>
+                {formatDate(post.publishedAt)}
+              </time>
+            </p>
           </div>
-          {post.image && (
+          {/* {post.image && (
             <>
               <div className="h-8" />
               <Image
@@ -55,8 +44,8 @@ export default function Post({ params }: { params: any }) {
                 quality={100}
               />
             </>
-          )}
-          <div className="h-16" />
+          )} */}
+          {/* <div className="h-16" /> */}
           <div className="prose prose-neutral">
             <MdxWrapper code={post.body.code} />
           </div>
