@@ -33,8 +33,6 @@ export default function Blog() {
     return searchString.includes(search.toLowerCase());
   });
 
-  console.log("posts", posts);
-
   return (
     <>
       <div className="flex flex-col gap-10">
