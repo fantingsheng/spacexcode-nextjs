@@ -8,7 +8,7 @@ type PostProps = {
 export default function PostList ({ posts }: PostProps) {
   return (
     <ul
-      className="flex flex-col animated-list"
+      className="flex flex-col gap-3 animated-list"
     >
       {posts.length === 0 && <p>No posts found</p>}
       {posts.map((post) => (
