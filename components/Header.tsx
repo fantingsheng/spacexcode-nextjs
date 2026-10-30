@@ -7,8 +7,8 @@ import NavLink from "./NavLink";
 
 const links = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
+  { label: "About", href: "/about" },
 ];
 
 export default function Header() {

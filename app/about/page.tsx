@@ -5,6 +5,9 @@ export default function About() {
         <h1 className="animate-in text-3xl font-bold tracking-tight text-primary">
           About
         </h1>
+        <p className="mt-4">
+          This is the about page for our blog. Here you can find more information about the blog and its purpose.
+        </p>
       </div>
     </div>
   )
